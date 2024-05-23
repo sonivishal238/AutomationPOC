@@ -30,13 +30,6 @@ pipeline {
         //     }
         // }
 
-        stage('Clean Workspace') {
-            steps {
-                cleanWs()
-                echo "Workspace cleaned up."
-            }
-        }
-
         stage('Checkout Code') {
             steps {
                 script {
@@ -118,7 +111,7 @@ pipeline {
 
     post {
         always {
-            // cleanWs()
+            cleanWs()
             echo "Workspace cleaned up."
         }
     }
