@@ -40,6 +40,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 script {
+                    echo "Using from branch jenkins2."
                     bat "git clone ${env.REPO_URL} ."
                     bat "git checkout main"
                     echo "Checked out code from ${env.REPO_URL}."
