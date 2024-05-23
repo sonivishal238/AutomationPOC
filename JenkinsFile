@@ -72,7 +72,7 @@ pipeline {
         stage('Generate NSwag Client') {
             steps {
                 script {
-                    def nswagCommand = "nswag openapi2csclient /input:${params.SWAGGER_URL} /namespace:VishalUserActions.APIs.${params.SERVICE_NAME} /className:${params.SERVICE_NAME}Api /generateExceptionClasses:false /exceptionClass:VishalUserActions.VishalApiException /output:NSwagGeneratedAPI\\${params.SERVICE_NAME}Api.cs"
+                    def nswagCommand = "nswag openapi2csclient /input:${params.SWAGGER_URL} /namespace:VishalUserActions.APIs.${params.SERVICE_NAME} /className:${params.SERVICE_NAME}Api /generateExceptionClasses:false /exceptionClass:VishalUserActions.VishalApiException /output:VishalUserActions\\NSwagGeneratedAPI\\${params.SERVICE_NAME}Api.cs"
                     bat nswagCommand
                     echo "Generated NSwag client for ${params.SERVICE_NAME} using ${params.SWAGGER_URL}."
                 }
