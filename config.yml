@@ -5,3 +5,6 @@ services:
   - repo_name: "original-api-1"
     service_name: "OriginalRest"
     swagger_url: "https://fakerestapi.azurewebsites.net/swagger/v1/swagger.json"
+  - repo_name: "original-api-1"
+    service_name: "OriginalRest"
+    swagger_url: "https://fakerestapi.azurewebsites.net/swagger/v1/swagger.json"
