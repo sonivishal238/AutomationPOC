@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'SERVICE_NAME', defaultValue: '', description: 'Name of the service')
-        string(name: 'SWAGGER_URL', defaultValue: '', description: 'URL to the swagger.json file')
+        string(name: 'SERVICE_NAME', defaultValue: 'TestRestService', description: 'Name of the service')
+        string(name: 'SWAGGER_URL', defaultValue: 'https://fakerestapi.azurewebsites.net/swagger/v1/swagger.json', description: 'URL to the swagger.json file')
     }
 
     environment {
