@@ -109,6 +109,9 @@ pipeline {
 
                     Branch: ${env.BRANCH_NAME}
                     Repository: ${env.REPO_URL}
+
+                    bat "gh pr create --title \"${prTitle}\" --body \"${prBody}\" --base main --head ${env.BRANCH_NAME}"
+                    echo "Created pull request for branch ${env.BRANCH_NAME}."
                     """
                 }
             }
