@@ -117,18 +117,10 @@ pipeline {
         stage('Create Pull Request') {
             steps {
                 script {
-                    def prTitle = "Auto-generated NSwag client update for ${params.SERVICE_NAME}"
-                    def prBody = """
-                    The NSwag client for ${params.SERVICE_NAME} has been generated and pushed to branch ${env.BRANCH_NAME}.
-                    Please review and merge this branch into the main branch.
-
-                    Branch: ${env.BRANCH_NAME}
-                    Repository: ${env.REPO_URL}
-
-                    Thank you,
-                    Jenkins
-                    """
-                    bat "gh pr create --title \"${prTitle}\" --body \"${prBody}\" --base main --head ${env.BRANCH_NAME}"
+                    bat """
+                        git status
+                        gh pr create --title "Trying to create PR through pipeline" --body "PR through CMD part 2" --head ${env.BRANCH_NAME}
+                        """
                     echo "Created pull request for branch ${env.BRANCH_NAME}."
                 }
             }
