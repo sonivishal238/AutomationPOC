@@ -118,7 +118,7 @@ pipeline {
             steps {
                 script {
                     bat 'gh pr create --title "Trying to create PR through CMD" --body "PR through CMD" --head "${env.BRANCH_NAME}"'
-                    echo "Created pull request for branch ${env.BRANCH_NAME}."
+                    echo "Created pull request for branch ${env.BRANCH_NAME}.."
                 }
             }
         }
