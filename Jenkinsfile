@@ -101,7 +101,7 @@ pipeline {
                 script {
                     bat 'git add .'
                     bat 'git commit -m "Auto-generated NSwag client update"'
-                    bat "git push origin ${env.BRANCH_NAME}"
+                    bat "git push --set-upstream origin ${env.BRANCH_NAME}"
                     echo "Pushed new branch ${env.BRANCH_NAME} to the remote repository."
                     echo """
                     The NSwag client for ${params.SERVICE_NAME} has been generated and pushed to branch ${env.BRANCH_NAME}.
