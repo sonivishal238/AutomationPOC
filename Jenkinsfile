@@ -15,7 +15,7 @@ pipeline {
         // stage('Extract Repo Info') {
         //     steps {
         //         script {
-        //             echo "Extracting repository information..."
+        //             echo "Extracting repository information....."
         //             // Extract necessary repository information
         //         }
         //     }
