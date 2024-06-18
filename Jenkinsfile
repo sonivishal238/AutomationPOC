@@ -55,15 +55,17 @@ pipeline {
         stage('Read Configuration') {
             steps {
                 script {
+                    // Read the YAML configuration file from the workspace
                     def configFile = readYaml file: 'service_config.yml'
                     def repoName = env.repository.split('/')[1]
+                    echo repoName 
                     def serviceConfig = configFile.services[repoName]
+
                     if (serviceConfig) {
                         env.SERVICE_NAME = serviceConfig.service_name
-                        echo "Repository: ${repoName}"
                         echo "Service Name: ${env.SERVICE_NAME}"
                     } else {
-                        error "Service configuration for repository '${repoName}' not found!"
+                        error "Service configuration for repository '${repoName}' not found in service_config.yml!"
                     }
                 }
             }
