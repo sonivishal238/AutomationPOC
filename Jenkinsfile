@@ -56,7 +56,9 @@ pipeline {
             steps {
                 script {
                     // Read the YAML configuration file from the workspace
+                    echo "Read Configuration stage trigered"
                     def configFile = readYaml file: 'service_config.yml'
+                    echo configFile
                     def repoName = env.repository.split('/')[1]
                     echo repoName 
                     def serviceConfig = configFile.services[repoName]
