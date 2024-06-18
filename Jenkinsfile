@@ -60,6 +60,8 @@ pipeline {
                     def serviceConfig = configFile.services[repoName]
                     if (serviceConfig) {
                         env.SERVICE_NAME = serviceConfig.service_name
+                        echo "Repository: ${repoName}"
+                        echo "Service Name: ${env.SERVICE_NAME}"
                     } else {
                         error "Service configuration for repository '${repoName}' not found!"
                     }
