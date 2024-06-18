@@ -12,7 +12,7 @@ pipeline {
                 [key: 'SWAGGER_URL', value: '$.pull_request.head.repo.url']
             ],
             causeString: 'Triggered by PR merge on $repository',
-            token: 'your-webhook-token',
+            token: 'nswag',
             printContributedVariables: true,
             printPostContent: true,
             regexpFilterText: '$action $merged',
