@@ -1,0 +1,5 @@
+services:
+  service-1:
+    service_name: FirstServiceNSwag
+  service-2:
+    service_name: SecondServiceNSwag
